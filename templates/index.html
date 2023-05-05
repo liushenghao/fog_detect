@@ -130,7 +130,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <div class="get_weather_info">
             <script>
                 $.get("http://ip-api.com/json/", function (basic) {
-                    // 旧版本 https://free-api.heweather.net/s6/weather/now?location=" + basic['ip'] + "&key=791138262e984a679eefc0157158e0aa
                     $.get("https://devapi.qweather.com/v7/weather/now?location=" + basic['lon'] + "," + basic['lat'] + "&key=791138262e984a679eefc0157158e0aa", function (param2) {
                         $(".location").text(basic['city']);
                         $(".temp").text(param2['now']['temp'] + '°');
@@ -219,10 +218,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 };
                 weather.setOption(option);
                 // 获取天气信息
-                $.get("https://www.tianqiapi.com/free/week?appid=31457898&appsecret=LlKqP8a8",
+                $.get("https://www.tianqiapi.com/free/week?appid=13925514&appsecret=bXNZXz6a",
                     function (res) {
                         //显示当前城市
-                        { #option.title.subtext = '当前城市：' + res.city# }
+                        { option.title.subtext = '当前城市：' + res.city }
                         //给横坐标复赋值
                         option.xAxis.data = [res.data[0].date,
                         res.data[1].date,
